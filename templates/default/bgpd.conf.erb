@@ -1,0 +1,21 @@
+hostname bgpd
+password <%= node.quagga.password %>
+enable password <%= node.quagga.enabled_password %>
+log file /var/log/quagga/bgpd.log
+log timestamp precision 6
+!
+router bgp <%= @local_asn %>
+ bgp router-id <%= @loopback %>
+ bgp log-neighbor-changes
+<% @networks.each do |i| -%>
+ network <%= i %>
+<% end -%>
+<% @ebgp_peers.each do |asn,v| -%>
+ <% v[:ip].each do |ip| -%>
+ neighbor <%= ip %> remote-as <%= asn %>
+ neighbor <%= ip %> next-hop-self
+ <% end -%>
+<% end -%>
+!
+line vty
+!

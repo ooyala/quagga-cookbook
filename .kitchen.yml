@@ -1,0 +1,21 @@
+---
+driver: 
+  name: vagrant
+  customize:
+    memory: 1024
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: false
+
+platforms:
+- name: debian
+  driver:
+    box: debian-wheezy-64
+    box_url: https://s3.amazonaws.com/mirrors.ooyala.com/vagrant/debian-wheezy-64.box
+
+suites:
+- name: default
+  run_list:
+    - recipe[quagga::ospf_sample]
+  attributes: 

@@ -1,0 +1,31 @@
+hostname ospfd
+password <%= node.quagga.password %>
+enable password <%= node.quagga.enabled_password %>
+log file /var/log/quagga/ospfd.log
+log timestamp precision 6
+!
+<% @interfaces.each do |port,options|-%>
+interface <%= port %>
+<% options.each do |option|-%>
+ <%= option %>
+<% end -%>
+!
+<% end -%>
+!
+router ospf
+ ospf router-id <%= @loopback %>
+<% @protocols.each do |protocol| -%>
+  redistribute <%= protocol %>
+<% end -%>
+<% @networks.each do |network| -%>
+  network <%= network  %> area <%= @area %>
+<% end -%>
+  passive-interface default
+<% @interfaces.each do |port,options|-%>
+  no passive-interface <%= port %>
+<% end -%>
+<% @ospf_options .each do |option| -%>
+  <%= option %>
+<% end -%>
+!
+line vty

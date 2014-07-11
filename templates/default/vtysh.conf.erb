@@ -1,0 +1,5 @@
+<% if node[:quagga]["integrated-vtysh-config"] %>
+service integrated-vtysh-config
+<% end %>
+hostname <%= node.hostname %>
+username root nopassword

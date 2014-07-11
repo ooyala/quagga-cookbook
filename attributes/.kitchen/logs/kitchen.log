@@ -1,0 +1,31 @@
+I, [2014-06-01T23:05:04.353113 #74644]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-06-01T23:05:04.353474 #74644] ERROR -- Kitchen: ------Exception-------
+E, [2014-06-01T23:05:04.353515 #74644] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2014-06-01T23:05:04.353545 #74644] ERROR -- Kitchen: Message: Kitchen YAML file /Users/bao/chef/chef-repo/site-cookbooks/quagga/attributes/.kitchen.yml does not exist.
+E, [2014-06-01T23:05:04.353574 #74644] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-06-01T23:05:04.353601 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:74:in `read'
+E, [2014-06-01T23:05:04.353629 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:78:in `data'
+E, [2014-06-01T23:05:04.353659 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:66:in `suites'
+E, [2014-06-01T23:05:04.353689 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:90:in `filter_instances'
+E, [2014-06-01T23:05:04.353717 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:72:in `build_instances'
+E, [2014-06-01T23:05:04.353744 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:52:in `instances'
+E, [2014-06-01T23:05:04.353771 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:64:in `get_filtered_instances'
+E, [2014-06-01T23:05:04.353798 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:85:in `parse_subcommand'
+E, [2014-06-01T23:05:04.353825 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:37:in `block in call'
+E, [2014-06-01T23:05:04.353852 #74644] ERROR -- Kitchen: /Users/bao/.rvm/rubies/ruby-1.9.3-p545/lib/ruby/1.9.1/benchmark.rb:280:in `measure'
+E, [2014-06-01T23:05:04.353878 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:36:in `call'
+E, [2014-06-01T23:05:04.353909 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:47:in `perform'
+E, [2014-06-01T23:05:04.353936 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:118:in `block (2 levels) in <class:CLI>'
+E, [2014-06-01T23:05:04.353963 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2014-06-01T23:05:04.353990 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2014-06-01T23:05:04.354016 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:233:in `invoke_task'
+E, [2014-06-01T23:05:04.354043 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2014-06-01T23:05:04.354070 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2014-06-01T23:05:04.354097 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/bin/kitchen:13:in `block in <top (required)>'
+E, [2014-06-01T23:05:04.354124 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/lib/kitchen/errors.rb:81:in `with_friendly_errors'
+E, [2014-06-01T23:05:04.354164 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/gems/test-kitchen-1.2.1/bin/kitchen:13:in `<top (required)>'
+E, [2014-06-01T23:05:04.354190 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/bin/kitchen:23:in `load'
+E, [2014-06-01T23:05:04.354214 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/bin/kitchen:23:in `<main>'
+E, [2014-06-01T23:05:04.354239 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/bin/ruby_executable_hooks:15:in `eval'
+E, [2014-06-01T23:05:04.354286 #74644] ERROR -- Kitchen: /Users/bao/.rvm/gems/ruby-1.9.3-p545/bin/ruby_executable_hooks:15:in `<main>'
+E, [2014-06-01T23:05:04.354315 #74644] ERROR -- Kitchen: ----------------------

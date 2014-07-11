@@ -1,0 +1,25 @@
+hostname zebra
+password <%= node.quagga.password %>
+enable password <%= node.quagga.enabled_password %>
+log file /var/log/quagga/zebra.log
+!
+<% @interfaces.each do |port,options|-%>
+interface <%= port %>
+<% options.each do |option|-%>
+ <%= option %>
+<% end -%>
+ link-detect
+ ipv6 nd suppress-ra
+!
+<% end -%>
+!
+<% @static_routes.each do |network,nexthop|-%>
+ip route <%= network %> <%= nexthop %>
+<% end -%>
+!
+ip forwarding
+ipv6 forwarding
+!
+!
+line vty
+!
