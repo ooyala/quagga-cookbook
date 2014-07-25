@@ -20,26 +20,26 @@
 
 action :add do
   zebra_path = "#{node.quagga.dir}/zebra.conf"
-  Chef::Log.info "Adding #{new_resource.name.to_s}: interface to #{zebra_path}"
+  Chef::Log.info "Adding #{new_resource.name}: interface to #{zebra_path}"
 
   template "#{zebra_path}" do
-    cookbook "quagga"
-    source "zebra.conf.erb"
+    cookbook 'quagga'
+    source 'zebra.conf.erb'
     owner node.quagga.user
     group node.quagga.group
-    mode "0644"
+    mode '0644'
     variables(
-      :interfaces => new_resource.interfaces,
-      :static_routes => new_resource.static_routes
+      interfaces: new_resource.interfaces,
+      static_routes: new_resource.static_routes
     )
-    notifies :reload, "service[quagga]", :delayed
+    notifies :reload, 'service[quagga]', :delayed
   end
 end
 
 action :remove do
   zebra_path = "#{node.quagga.dir}/zebra.conf"
-  if ::File.exists?(zebra_path)
-    Chef::Log.info "Removing #{new_resource.file_type.to_s}: interface from #{zebra_path}"
+  if ::File.exist?(zebra_path)
+    Chef::Log.info "Removing #{new_resource.file_type}: interface from #{zebra_path}"
     file zebra_path do
       action :delete
     end

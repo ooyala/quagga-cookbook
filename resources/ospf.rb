@@ -22,9 +22,9 @@ actions :add, :remove
 
 default_action :add
 
-attribute :name, :kind_of => String, :name_attribute => true
-attribute :networks, :kind_of => Array, :default => []
-attribute :protocols, :kind_of => Array, :default => []
-attribute :loopback, :kind_of => String, :default => "127.0.0.1"
-attribute :interfaces, :kind_of => Hash, :default => {}
-attribute :ospf_options, :kind_of => Array, :default => []
+attribute :name, kind_of: String, name_attribute: true
+attribute :networks, kind_of: Array, default: []
+attribute :protocols, kind_of: Array, default: []
+attribute :loopback, kind_of: String, default: '127.0.0.1'
+attribute :interfaces, kind_of: Hash, default: {}
+attribute :ospf_options, kind_of: Array, default: []

@@ -23,6 +23,6 @@ actions :add, :remove
 default_action :add
 
 # resources for interfaces
-attribute :name, :kind_of => String, :name_attribute => true
-attribute :interfaces, :kind_of => Hash, :default => {}
-attribute :static_routes, :kind_of => Hash, :default => {}
+attribute :name, kind_of: String, name_attribute: true
+attribute :interfaces, kind_of: Hash, default: {}
+attribute :static_routes, kind_of: Hash, default: {}

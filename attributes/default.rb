@@ -1,4 +1,4 @@
-default[:quagga][:dir] = "/etc/quagga"
+default[:quagga][:dir] = '/etc/quagga'
 
 default[:quagga][:user] = 'quagga'
 default[:quagga][:group] = 'quagga'
@@ -13,9 +13,9 @@ default[:quagga][:daemons][:isisd] = false
 default[:quagga][:daemons][:babeld] = false
 
 # insecured default username and password. overwrite when deploy
-default[:quagga][:password] = "quagga"
-default[:quagga][:enabled_password] = "quagga"
+default[:quagga][:password] = 'quagga'
+default[:quagga][:enabled_password] = 'quagga'
 
-default[:quagga]["integrated-vtysh-config"] = false
+default[:quagga]['integrated-vtysh-config'] = false
 
-default[:quagga][:loopback] = "127.0.0.1"
+default[:quagga][:loopback] = '127.0.0.1'

@@ -20,35 +20,35 @@
 
 action :add do
   ospfd_path = "#{node.quagga.dir}/ospfd.conf"
-  Chef::Log.info "Adding #{new_resource.name.to_s}: ospf to #{ospfd_path}"
+  Chef::Log.info "Adding #{new_resource.name}: ospf to #{ospfd_path}"
 
   template "#{ospfd_path}" do
-    cookbook "quagga"
-    source "ospfd.conf.erb"
+    cookbook 'quagga'
+    source 'ospfd.conf.erb'
     owner node.quagga.user
     group node.quagga.group
-    mode "0644"
+    mode '0644'
     variables(
-      :area => new_resource.name,
-      :networks => new_resource.networks,
-      :loopback => new_resource.loopback,
-      :protocols => new_resource.protocols,
-      :interfaces => new_resource.interfaces,
-      :ospf_options => new_resource.ospf_options
+      area: new_resource.name,
+      networks: new_resource.networks,
+      loopback: new_resource.loopback,
+      protocols: new_resource.protocols,
+      interfaces: new_resource.interfaces,
+      ospf_options: new_resource.ospf_options
     )
-    notifies :reload, "service[quagga]", :delayed
+    notifies :reload, 'service[quagga]', :delayed
   end
 
   # configure loopback
   ifconfig "#{new_resource.loopback}/32" do
-    device "lo:1"
+    device 'lo:1'
   end
 end
 
 action :remove do
   ospfd_path = "#{node.quagga.dir}/ospfd.conf"
-  if ::File.exists?(ospfd_path)
-    Chef::Log.info "Removing #{new_resource.file_type.to_s}: ospf from #{ospfd_path}"
+  if ::File.exist?(ospfd_path)
+    Chef::Log.info "Removing #{new_resource.file_type}: ospf from #{ospfd_path}"
     file ospfd_path do
       action :delete
     end

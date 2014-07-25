@@ -18,6 +18,6 @@
 # limitations under the License.
 #
 
-include_recipe "quagga"
+include_recipe 'quagga'
 
 node.set[:quagga][:daemons][:bgpd] = true

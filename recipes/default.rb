@@ -18,48 +18,48 @@
 # limitations under the License.
 #
 
-package "quagga" do
+package 'quagga' do
   action :install
 end
 
 directory node.quagga.dir do
   owner node.quagga.user
   group node.quagga.group
-  mode "0755"
+  mode '0755'
   action :create
 end
 
-service "quagga" do
-    action :enable
+service 'quagga' do
+  action :enable
 end
 
-if node.platform == "debian"
+if node.platform == 'debian'
   template "#{node.quagga.dir}/daemons" do
-    source "daemons.erb"
+    source 'daemons.erb'
     owner node.quagga.user
     group node.quagga.group
-    mode "0644"
-    notifies :restart, "service[quagga]", :delayed
+    mode '0644'
+    notifies :restart, 'service[quagga]', :delayed
   end
 
   template "#{node.quagga.dir}/debian.conf" do
-    source "debian.conf.erb"
+    source 'debian.conf.erb'
     owner node.quagga.user
     group node.quagga.group
-    mode "0644"
+    mode '0644'
   end
 end
 
 template "#{node.quagga.dir}/vtysh.conf" do
-  source "vtysh.conf.erb"
+  source 'vtysh.conf.erb'
   owner node.quagga.user
   group node.quagga.group
-  mode "0644"
+  mode '0644'
   # restart needed?
-  notifies :restart, "service[quagga]", :delayed
+  notifies :restart, 'service[quagga]', :delayed
 end
 
-service "quagga" do
-  supports :status => true, :restart => true, :reload => true
-  action [ :enable, :restart ]
+service 'quagga' do
+  supports status: true, restart: true, reload: true
+  action [:enable, :restart]
 end
