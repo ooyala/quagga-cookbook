@@ -67,7 +67,7 @@ end
 Author and License
 ===================
 
-__Author__ Bao Nguyen <ngqbao@gmail.com>
+__Author__ Bao Nguyen <opensource-cookbooks@ooyala.com>
 
 Copyright 2014, Ooyala Inc.
 
