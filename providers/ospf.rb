@@ -39,9 +39,10 @@ action :add do
     notifies :reload, 'service[quagga]', :delayed
   end
 
-  # configure loopback
-  ifconfig "#{new_resource.loopback}/32" do
-    device 'lo:1'
+  if new_resource.ifconfig
+    ifconfig "#{new_resource.loopback}/32" do
+      device 'lo:1'
+    end
   end
 end
 

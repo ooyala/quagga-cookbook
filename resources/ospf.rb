@@ -28,3 +28,4 @@ attribute :protocols, kind_of: Array, default: []
 attribute :loopback, kind_of: String, default: '127.0.0.1'
 attribute :interfaces, kind_of: Hash, default: {}
 attribute :ospf_options, kind_of: Array, default: []
+attribute :ifconfig, :kind_of => [ TrueClass, FalseClass ], :default => true
