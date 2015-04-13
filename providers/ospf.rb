@@ -41,7 +41,7 @@ action :add do
 
   if new_resource.ifconfig
     ifconfig "#{new_resource.loopback}/32" do
-      device "lo:1"
+      device 'lo:1'
     end
   end
 end
